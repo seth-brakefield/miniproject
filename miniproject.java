@@ -1,22 +1,34 @@
-import java.util.Scanner;
+//import java.util.Scanner;
 public class miniproject {
 
     public static void main(String[] args) {
-            Scanner scanner = new Scanner(System.in);
-            String userInput;
-            int inputLength;
-            System.out.println("Enter card number:  ");
-            userInput = scanner.next();
-            String imputValue = String.valueOf(userInput);       
+        /*   Scanner scanner = new Scanner(System.in);
+        String userInput;
+        int inputLength;
+        String imputValue = String.valueOf(userInput);       
+        System.out.println("Enter card number:  ");
+        userInput = scanner.next();
+        inputLength = userInput.length();
 
-            inputLength = userInput.length();
-
-            scanner.close();
-            
+        scanner.close();
+        */
         long[] userCard = {4,3,8,8,5,7,6,0,1,8,4,0,2,6,2,6};
 
         long total;
-        for (int i = userCard.length - 1; i >= 0; i-=2) { // multiplying everyother array numbers by 2
+        for (int i = userCard.length - 2; i >= 0; i-=2) { // multiplying evens place array numbers by 2
+            total = 2*userCard[i];
+                if (total>=10) {
+                    long tens = total/10;
+                    long ones = total%10;
+                    long splitTotal = tens + ones;
+                    System.out.println(splitTotal);
+            } 
+                else {
+                    System.out.println(total);
+            }
+        }
+
+        for (int i = userCard.length - 1; i >= 0; i-=2) { // multiplying odds place array numbers by 2
             total = 2*userCard[i];
                 if (total>=10) {
                     long tens = total/10;
