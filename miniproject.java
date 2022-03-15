@@ -24,12 +24,13 @@ public class miniproject {
                 long ones = total % 10;
                 splitTotal = tens + ones;
                 evenTotal += splitTotal;
-            } else {
+            } 
+            else {
                 evenTotal += total;
             }
         }
 
-        for (int i = userCard.length - 1; i >= 0; i-=2) { // this needs to be changed it doesn't need to have usercard multiplied by 2
+        for (int i = userCard.length - 1; i >= 0; i-=2) { // this takes all of the odd placed numbers and adds them together
             total = userCard[i];
             oddTotal += total;
         }
@@ -43,40 +44,5 @@ public class miniproject {
         for (int i = 0; i < myList.length; i++)
         myList[i] = input.nextDouble();
         */
-
-
-                /*
-                for (int i = 0; i < inputLength; i++) {
-                    if (userInput.charAt(i) <= '9'){
-                        System.out.print("error ");
-                        break;
-                    }
-                    else if (userInput.charAt(i) <= 'C'){
-                        System.out.print("2");
-                    }
-                    else if (userInput.charAt(i) <= 'F'){
-                        System.out.print("3");
-                    }
-                    else if (userInput.charAt(i) <= 'I'){
-                        System.out.print("4");
-                    }
-                    else if (userInput.charAt(i) <= 'L'){
-                        System.out.print("5");
-                    }
-                    else if (userInput.charAt(i) <= 'O'){
-                        System.out.print("6");
-                    }
-                    else if (userInput.charAt(i) <= 'S'){
-                        System.out.print("7");
-                    }
-                    else if (userInput.charAt(i) <= 'V'){
-                        System.out.print("8");
-                    }
-                    else if (userInput.charAt(i) <= 'Z'){
-                        System.out.print("9");
-                    }      
-                        
-                } 
-                */
     }
 }
