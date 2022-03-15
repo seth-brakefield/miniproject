@@ -13,33 +13,36 @@ public class miniproject {
         scanner.close();
         */
         long[] userCard = {4,3,8,8,5,7,6,0,1,8,4,0,2,6,2,6};
-
+        long evenTotal = 0;
+        long oddTotal = 0;
         long total;
         for (int i = userCard.length - 2; i >= 0; i-=2) { // multiplying evens place array numbers by 2
-            total = 2*userCard[i];
-                if (total>=10) {
-                    long tens = total/10;
-                    long ones = total%10;
-                    long splitTotal = tens + ones;
-                    System.out.println(splitTotal);
-            } 
-                else {
-                    System.out.println(total);
+            total = 2 * userCard[i];
+            long splitTotal = 0;
+            if (total >= 10) {
+                long tens = total / 10;
+                long ones = total % 10;
+                splitTotal = tens + ones;
+                evenTotal += splitTotal;
+            } else {
+                evenTotal += total;
             }
         }
 
         for (int i = userCard.length - 1; i >= 0; i-=2) { // multiplying odds place array numbers by 2
             total = 2*userCard[i];
-                if (total>=10) {
-                    long tens = total/10;
-                    long ones = total%10;
-                    long splitTotal = tens + ones;
-                    System.out.println(splitTotal);
-            } 
-                else {
-                    System.out.println(total);
+            if (total>=10) {
+                long tens = total/10;
+                long ones = total%10;
+                long splitTotal = tens + ones;
+                System.out.println(splitTotal);
             }
+            else {
+                System.out.println(total);
+            }
+
         }
+        System.out.println(evenTotal);
 
 
         /*
@@ -82,6 +85,6 @@ public class miniproject {
                     }      
                         
                 } 
-                */ 
-            }
-        }
+                */
+    }
+}
