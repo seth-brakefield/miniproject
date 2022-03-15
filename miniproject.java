@@ -24,7 +24,7 @@ public class miniproject {
                 long ones = total % 10;
                 splitTotal = tens + ones;
                 evenTotal += splitTotal;
-            } 
+            }
             else {
                 evenTotal += total;
             }
@@ -34,8 +34,13 @@ public class miniproject {
             total = userCard[i];
             oddTotal += total;
         }
-        System.out.println(evenTotal);
-        System.out.println(oddTotal);
+        if ((evenTotal + oddTotal )%10 == 0){ // this adds the two values together and divides them by 10
+            System.out.println("Valid");
+            }
+        else{
+            System.out.println("Invalid");
+        }
+
 
 
         /*
