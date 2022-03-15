@@ -12,7 +12,7 @@ public class miniproject {
 
         scanner.close();
         */
-        long[] userCard = {4,3,8,8,5,7,6,0,1,8,4,0,2,6,2,6};
+        long[] userCard = {4,3,8,8,5,7,6,0,1,8,4,0,2,6,2,6}; // temp value still need to figure out how to add a users input as a array
         long evenTotal = 0;
         long oddTotal = 0;
         long total;
@@ -29,20 +29,12 @@ public class miniproject {
             }
         }
 
-        for (int i = userCard.length - 1; i >= 0; i-=2) { // multiplying odds place array numbers by 2
-            total = 2*userCard[i];
-            if (total>=10) {
-                long tens = total/10;
-                long ones = total%10;
-                long splitTotal = tens + ones;
-                System.out.println(splitTotal);
-            }
-            else {
-                System.out.println(total);
-            }
-
+        for (int i = userCard.length - 1; i >= 0; i-=2) { // this needs to be changed it doesn't need to have usercard multiplied by 2
+            total = userCard[i];
+            oddTotal += total;
         }
         System.out.println(evenTotal);
+        System.out.println(oddTotal);
 
 
         /*
