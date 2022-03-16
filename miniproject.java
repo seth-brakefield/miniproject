@@ -1,53 +1,42 @@
-//import java.util.Scanner;
-public class miniproject {
+import java.util.Scanner; 
+public class miniproject { 
+    public static void main(String[] args) { 
+        Scanner scanner = new Scanner(System.in); 
+        long evenTotal = 0; 
+        long oddTotal = 0; 
+        long total; 
 
-    public static void main(String[] args) {
-        /*   Scanner scanner = new Scanner(System.in);
-        String userInput;
-        int inputLength;
-        String imputValue = String.valueOf(userInput);       
-        System.out.println("Enter card number:  ");
-        userInput = scanner.next();
-        inputLength = userInput.length();
+        System.out.print("Enter a credit card number as a long integer: "); // user is prompted to input their card number 
+        String userInput = scanner.nextLine(); 
+        scanner.close();  
+        char[] charList = userInput.toCharArray(); // user input is converted into a char array 
+        long userCard[] = new long[userInput.length()]; // user input is converted into long array 
 
-        scanner.close();
-        */
-        long[] userCard = {4,3,8,8,5,7,6,0,1,8,4,0,2,6,2,6}; // temp value still need to figure out how to add a users input as a array
-        long evenTotal = 0;
-        long oddTotal = 0;
-        long total;
-        for (int i = userCard.length - 2; i >= 0; i-=2) { // multiplying evens place array numbers by 2
-            total = 2 * userCard[i];
-            long splitTotal = 0;
-            if (total >= 10) {
-                long tens = total / 10;
-                long ones = total % 10;
-                splitTotal = tens + ones;
-                evenTotal += splitTotal;
-            }
-            else {
-                evenTotal += total;
-            }
-        }
-
-        for (int i = userCard.length - 1; i >= 0; i-=2) { // this takes all of the odd placed numbers and adds them together
-            total = userCard[i];
-            oddTotal += total;
-        }
-        if ((evenTotal + oddTotal )%10 == 0){ // this adds the two values together and divides them by 10
-            System.out.println("Valid");
-            }
-        else{
-            System.out.println("Invalid");
-        }
-
-
-
-        /*
-        java.util.Scanner input = new java.util.Scanner(System.in);
-        System.out.print("Enter " + myList.length + " values: ");
-        for (int i = 0; i < myList.length; i++)
-        myList[i] = input.nextDouble();
-        */
-    }
-}
+            for (int i = 0; i < userInput.length(); i++) { // converts char array to long array 
+                userCard[i] = Character.digit(charList[i], 10); 
+            } 
+            for (int i = userCard.length - 2; i >= 0; i-=2) { // multiplying evens place array numbers by 2 
+                total = 2 * userCard[i]; 
+                long splitTotal = 0; 
+                if (total >= 10) { // this splits the numerical value of the double-digit number and adds the values together
+                    long tens = total / 10; 
+                    long ones = total % 10; 
+                    splitTotal = tens + ones; 
+                    evenTotal += splitTotal; // adds to the evan total
+                } 
+                else { 
+                    evenTotal += total; // single digits get added to the even total right away
+                } 
+            } 
+            for (int i = userCard.length - 1; i >= 0; i-=2) { // this takes all of the odd placed numbers and adds them together 
+                total = userCard[i]; 
+                oddTotal += total; 
+            } 
+            if ((evenTotal + oddTotal )%10 == 0){ // this adds the two values together and divides them by 10 
+                System.out.println(userInput + " is valid"); 
+                } 
+            else { 
+                System.out.println(userInput + " is invalid"); 
+            } 
+    } 
+} 
